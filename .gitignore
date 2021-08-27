@@ -3,7 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
-./postgres-data
+/postgres-data
 .idea
 .env
 .env.backup
