@@ -23,13 +23,13 @@ class DeveloperController extends Controller
         if ($request->all()) {
             return response()->json([
                 'code' => 200,
-                'message' => null,
+                'message' => (array()),
                 'data' => $developers->searchByTerms($request)
             ]);
         } else {
             return response()->json([
                 'code' => 200,
-                'message' => null,
+                'message' => (array()),
                 'data' => $developers->getAllSortByName()
             ]);
         }
@@ -56,15 +56,15 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'data' => null
+                'data' => (array())
             ], 400);
         } else {
             $developers = new DeveloperModel();
             $developers->persistNewDeveloper($request);
             return response()->json([
                 'code' => 201,
-                'message' => null,
-                'data' => null
+                'message' => (array()),
+                'data' => (array())
             ], 201);
         }
     }
@@ -81,14 +81,16 @@ class DeveloperController extends Controller
         if ($developers->getDeveloperById($id)) {
             return response()->json([
                 'code' => 200,
-                'message' => null,
+                'message' => (array()),
                 'data' => $developers->getDeveloperById($id)
             ]);
         } else {
             return response()->json([
                 'code' => 404,
-                'message' => 'Desenvolvedor não encontrado no banco de dados',
-                'data' => null
+                'message' => [
+                    'errors' => 'Developer not found in database'
+                ],
+                'data' => (array())
             ], 404);
         }
     }
@@ -114,7 +116,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'data' => null
+                'data' => (array())
             ], 400);
 
         } else {
@@ -123,14 +125,14 @@ class DeveloperController extends Controller
                 $developers->updateDeveloper($request, $id);
                 return response()->json([
                     'code' => 200,
-                    'message' => null,
-                    'data' => null
+                    'message' => (array()),
+                    'data' => (array())
                 ]);
             } else {
                 return response()->json([
                     'code' => 400,
                     'message' => 'ID não encontrado no banco de dados',
-                    'data' => null
+                    'data' => (array())
                 ], 400);
             }
         }
@@ -153,8 +155,10 @@ class DeveloperController extends Controller
         } else {
             return response()->json([
                 'code' => 400,
-                'message' => 'ID não encontrado no banco de dados',
-                'data' => null
+                'message' => [
+                    'errors' => 'ID not found in database'
+                ],
+                'data' => (array())
             ], 400);
         }
 
