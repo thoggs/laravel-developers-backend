@@ -31,10 +31,12 @@ sh production.sh
 ```
 4) - Feito isso, agora precisamos alterar o apontamento para o postgreeSQL no rquivo `.env` dentro da paste do projeto `pontential-crud-laravel`
 
+=> Altere a variavel `DB_HOST=` de `localhost` para `database`
+
 No Linux e macOS, podemos alterar via linha de comando com o vim (opcional)
 
 
-=> Concluído: agora temos o laravel rodando em http://localhost:8080/ e apontando para o banco de dados PostgreeSQL
+=> Concluído: agora temos o laravel rodando em http://localhost:8080/ e apontando para o container PostgreeSQL que está respondendo na porta `5432`
 
 
 ## License
