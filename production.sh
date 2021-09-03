@@ -25,6 +25,3 @@ php artisan config:cache
 # Optimizing Route Loading
 php artisan route:cache
 
-php artisan migrate
-
-php artisan db:seed --class=DevelopersSeeder
