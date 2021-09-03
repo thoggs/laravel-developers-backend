@@ -20,17 +20,25 @@ class DeveloperController extends Controller
     {
         $developers = new DeveloperModel();
 
+        if ($request->input('page')) {
+            return response()->json([
+                'code' => 200,
+                'message' => (array()),
+                'body' => $developers->getAllDevelopersPaged()
+            ]);
+        }
+
         if ($request->all()) {
             return response()->json([
                 'code' => 200,
                 'message' => (array()),
-                'data' => $developers->searchByTerms($request)
+                'body' => $developers->searchByTerms($request)
             ]);
         } else {
             return response()->json([
                 'code' => 200,
                 'message' => (array()),
-                'data' => $developers->getAllSortByName()
+                'body' => $developers->getAllDevelopers()
             ]);
         }
 
@@ -56,7 +64,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'data' => (array())
+                'body' => (array())
             ], 400);
         } else {
             $developers = new DeveloperModel();
@@ -64,7 +72,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 201,
                 'message' => (array()),
-                'data' => (array())
+                'body' => (array())
             ], 201);
         }
     }
@@ -82,7 +90,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 200,
                 'message' => (array()),
-                'data' => $developers->getDeveloperById($id)
+                'body' => (array($developers->getDeveloperById($id)))
             ]);
         } else {
             return response()->json([
@@ -90,7 +98,7 @@ class DeveloperController extends Controller
                 'message' => [
                     'errors' => 'Developer not found in database'
                 ],
-                'data' => (array())
+                'body' => (array())
             ], 404);
         }
     }
@@ -116,7 +124,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'data' => (array())
+                'body' => (array())
             ], 400);
 
         } else {
@@ -126,13 +134,13 @@ class DeveloperController extends Controller
                 return response()->json([
                     'code' => 200,
                     'message' => (array()),
-                    'data' => (array())
+                    'body' => (array())
                 ]);
             } else {
                 return response()->json([
                     'code' => 400,
                     'message' => 'ID não encontrado no banco de dados',
-                    'data' => (array())
+                    'body' => (array())
                 ], 400);
             }
         }
@@ -158,7 +166,7 @@ class DeveloperController extends Controller
                 'message' => [
                     'errors' => 'ID not found in database'
                 ],
-                'data' => (array())
+                'body' => (array())
             ], 400);
         }
 
