@@ -28,7 +28,7 @@ docker-compose exec php-apache-laravel /bin/bash
 
 3) - Dentro do container Docker, rode o comando:
 ```sh
-sh developer.sh
+sh developer.sh && exit
 ```
 
 4) - Fora do container, dentro da pasta do projeto, precisamos rodar a `migration` e pedir para o Laravel popular o banco com uma `Seeder`, rode o comando:
