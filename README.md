@@ -9,7 +9,7 @@
 
 ## Requisitos
 
-- [x] Ter o [Docker instalado](https://www.docker.com/), instalado.
+- [x] Ter o [Docker instalado](https://www.docker.com/).
 - [x] Acesso ao SHELL com permissão `root` (macOS e Linux; no Windows precisa ser admin).
 - [x] Conexão com a internet.
 - [x] Ter o GIT instalado
@@ -40,10 +40,10 @@ php artisan migrate && php artisan db:seed --class=DevelopersSeeder
 
 => Altere a variavel `DB_HOST=` de `localhost` para `database`
 
-No Linux e macOS, podemos alterar via linha de comando com o vim (opcional)
+No Linux e macOS, podemos alterar via linha de comando com o `vim`
 
 
-* Concluído: agora temos o laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreeSQL que está respondendo na porta `5432`
+* Concluído: agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreeSQL que está respondendo na porta `5432`
 
 
 ## License
