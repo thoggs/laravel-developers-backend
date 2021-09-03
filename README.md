@@ -43,7 +43,7 @@ php artisan migrate && php artisan db:seed --class=DevelopersSeeder
 No Linux e macOS, podemos alterar via linha de comando com o vim (opcional)
 
 
-* Concluído: agora temos o laravel rodando em http://localhost:8080/ e apontando para o container PostgreeSQL que está respondendo na porta `5432`
+* Concluído: agora temos o laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreeSQL que está respondendo na porta `5432`
 
 
 ## License
