@@ -13,6 +13,7 @@
 - [x] Acesso ao SHELL com permissão `root` (macOS e Linux; no Windows precisa ser admin).
 - [x] Conexão com a internet.
 - [x] Ter o GIT instalado
+- [x] Ter o [PHP](https://www.php.net/downloads) instalado 
 
 ## Clonando e subindo o Docker container na porta 8080
 1) - Rode o comando:
@@ -29,7 +30,13 @@ docker-compose exec php-apache-laravel /bin/bash
 ```sh
 sh production.sh
 ```
-4) - Feito isso, agora precisamos alterar o apontamento para o postgreeSQL no rquivo `.env` dentro da paste do projeto `pontential-crud-laravel`
+
+4) - Fora do container, dentro da pasta do projeto, precisamos rodar a `migration` e pedir para o Laravel popular o banco com uma `Seeder`, rode o comando:
+```sh
+php artisan migrate && php artisan db:seed --class=DevelopersSeeder
+```
+
+5) - Feito isso, agora precisamos alterar o apontamento para o postgreeSQL no rquivo `.env` dentro da paste do projeto `pontential-crud-laravel`
 
 => Altere a variavel `DB_HOST=` de `localhost` para `database`
 
