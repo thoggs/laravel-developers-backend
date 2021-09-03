@@ -29,4 +29,6 @@ php artisan route:cache
 # Optimizing View Loading
 php artisan view:cache
 
+php artisan migrate
 
+php artisan db:seed --class=DevelopersSeeder
