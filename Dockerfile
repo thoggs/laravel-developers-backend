@@ -1,4 +1,4 @@
-FROM php:8-apache
+FROM php:8.0-alpine
 
 WORKDIR /var/www/laravel_docker
 
