@@ -2,25 +2,34 @@ version: '3.8'
 
 services:
     database:
-        image: postgres
+        image: postgres:latest
         container_name: database
-        restart: unless-stopped
+        restart: always
         environment:
             POSTGRES_PASSWORD: secret
-            POSTGRES_DB: laravel_docker
-        volumes:
-            - ./postgres-data:/var/lib/postgresql/data
+            POSTGRES_DB: core
         ports:
             - '5432:5432'
+        volumes:
+            - .docker/postgres-data:/var/lib/postgresql/data
 
-    php-apache-laravel:
-        container_name: php-apache-laravel
+    apache-laravel:
+        container_name: apache-laravel
         build:
-            context: ./php
+            context: .
         ports:
             - '8080:80'
         volumes:
-            - ./:/var/www/laravel_docker
-            - ./apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
+            - .docker/apache/default.conf:/etc/apache2/sites-enabled/000-default.conf
         depends_on:
             - database
+
+#    configdb:
+#        image: php:8-alpine
+#        container_name: configdb
+#        build:
+#            context: .docker/php
+#        restart: always
+#        depends_on:
+#            - database
+#            - apache-laravel

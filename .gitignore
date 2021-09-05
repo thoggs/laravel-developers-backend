@@ -4,6 +4,10 @@
 /storage/*.key
 /vendor
 /postgres-data
+/.idea
+/.vscode
+.docker/postgres-data
+.DS_Store
 .idea
 .env
 .env.backup
@@ -13,5 +17,10 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/.idea
-/.vscode
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
