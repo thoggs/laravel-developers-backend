@@ -1,4 +1,4 @@
-FROM php:8.0-alpine
+FROM php:8.0-apache
 
 WORKDIR /var/www/laravel_docker
 
@@ -28,6 +28,7 @@ RUN composer install --optimize-autoloader --no-dev
 RUN cp .env.example .env
 
 RUN php artisan route:cache
+
 RUN a2enmod rewrite
 
 # Configure Laravel logs
