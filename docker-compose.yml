@@ -24,12 +24,3 @@ services:
         depends_on:
             - database
 
-#    configdb:
-#        image: php:8-alpine
-#        container_name: configdb
-#        build:
-#            context: .docker/php
-#        restart: always
-#        depends_on:
-#            - database
-#            - apache-laravel
