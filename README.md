@@ -21,7 +21,7 @@
 git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential-crud-backend && docker-compose up -d --build
 ```
 
-2) Agora precisamos rodar as Migrations e os Seeds para pupular o banco de dados PostgreSQL em random:
+2) Agora precisamos rodar as Migrations e o Seeder para pupular o banco de dados PostgreSQL em random:
 
 ```sh
 docker exec apache-laravel chmod -R 777 -R storage && docker exec apache-laravel php artisan migrate && docker exec apache-laravel php artisan db:seed --class=DevelopersSeeder
