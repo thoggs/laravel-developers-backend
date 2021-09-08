@@ -21,7 +21,7 @@ class DevelopersSeeder extends Seeder
                 'sexo' => 'O',
                 'idade' => 55,
                 'hobby' => 'Uma das melhores empresas na gestão de pessoas',
-                'datanascimento' => '13/12/1966'
+                'datanascimento' => '10/03/1993'
             ]);
         }
 
