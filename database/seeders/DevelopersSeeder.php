@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class DevelopersSeeder extends Seeder
 {
@@ -16,14 +15,13 @@ class DevelopersSeeder extends Seeder
     public function run()
 
     {
-        for ($i = 0; $i < 100; $i++)
-        {
+        for ($i = 0; $i < 100; $i++) {
             DB::table('developers')->insert([
-                'nome' => Str::random(10),
-                'sexo' => 'm' | 'f',
-                'idade' => 30,
-                'hobby' => Str::random(50),
-                'datanascimento' => '10/03/1993'
+                'nome' => 'Gazin developer',
+                'sexo' => 'O',
+                'idade' => 55,
+                'hobby' => 'Uma das melhores empresas na gestão de pessoas',
+                'datanascimento' => '13/12/1966'
             ]);
         }
 
