@@ -20,8 +20,8 @@ class DevelopersSeeder extends Seeder
                 'nome' => 'Gazin developer',
                 'sexo' => 'O',
                 'idade' => 55,
-                'hobby' => 'Uma das melhores empresas na gestão de pessoas',
-                'datanascimento' => '10/03/1993'
+                'hobby' => 'Sempre fazendo o melhor para você!',
+                'datanascimento' => '12-13-1993'
             ]);
         }
 
