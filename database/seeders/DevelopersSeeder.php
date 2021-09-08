@@ -21,7 +21,7 @@ class DevelopersSeeder extends Seeder
                 'sexo' => 'O',
                 'idade' => 55,
                 'hobby' => 'Sempre fazendo o melhor para você!',
-                'datanascimento' => '12-13-1993'
+                'datanascimento' => '12-13-1966'
             ]);
         }
 
