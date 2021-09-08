@@ -23,7 +23,7 @@ class DevelopersSeeder extends Seeder
                 'sexo' => 'm' | 'f',
                 'idade' => 30,
                 'hobby' => Str::random(50),
-                'datanascimento' => '10/03/1993'
+                'datanascimento' => '12-13-1966'
             ]);
         }
 
