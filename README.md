@@ -9,7 +9,7 @@
 
 ### Requisitos:
 
-- [x] Ter o [Docker](https://www.docker.com/) e o Docker compose instalado.
+- [x] Ter o [Docker](https://www.docker.com/) instalado.
 - [x] Ter o GIT instalado.
 - [x] Conexão com a internet.
 
