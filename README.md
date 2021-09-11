@@ -29,7 +29,7 @@ docker exec apache-laravel chmod -R 777 -R storage && docker exec apache-laravel
 
 ### Concluído:
 
-> Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreeSQL que está respondendo na porta `5432`
+> Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreSQL que está respondendo na porta `5432`
 
 ### License
 
