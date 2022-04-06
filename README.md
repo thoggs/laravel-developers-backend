@@ -9,7 +9,7 @@
 
 ### Requisitos:
 
-- [x] Ter o [Docker](https://www.docker.com/) e o Docker compose instalado.
+- [x] Ter o [Docker](https://www.docker.com/) instalado.
 - [x] Ter o GIT instalado.
 - [x] Conexão com a internet.
 
@@ -21,7 +21,7 @@
 git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential-crud-backend && docker-compose up -d --build
 ```
 
-2) Agora precisamos rodar as Migrations e o Seeder para pupular o banco de dados PostgreSQL em random:
+2) Agora precisamos rodar as Migrations e o Seeder para pupular o banco de dados PostgreSQL:
 
 ```sh
 docker exec apache-laravel chmod -R 777 -R storage && docker exec apache-laravel php artisan migrate && docker exec apache-laravel php artisan db:seed --class=DevelopersSeeder
@@ -29,7 +29,7 @@ docker exec apache-laravel chmod -R 777 -R storage && docker exec apache-laravel
 
 ### Concluído:
 
-> Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreeSQL que está respondendo na porta `5432`
+> Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreSQL que está respondendo na porta `5432`
 
 ### License
 
