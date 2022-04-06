@@ -28,8 +28,3 @@ jobs:
       run: |
         mkdir -p database
         touch database/
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: pgsql
-        DB_DATABASE: core
-      run: vendor/bin/phpunit
