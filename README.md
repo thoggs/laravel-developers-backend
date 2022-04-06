@@ -10,7 +10,7 @@
 ### Requisitos:
 
 - [x] Ter o [Docker](https://www.docker.com/) instalado.
-- [x] ter o Docker Compose 3.8 instalado
+- [x] ter o Docker Compose v2.4.1 instalado
 - [x] Ter o GIT instalado.
 - [x] Conexão com a internet.
 
