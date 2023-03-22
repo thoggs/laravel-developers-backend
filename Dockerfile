@@ -33,5 +33,6 @@ RUN a2enmod rewrite
 
 # Configure Laravel logs
 RUN ln -sf /dev/stdout /var/www/laravel_docker/storage/laravel.log
+RUN chmod -R 777 /var/www
 
 COPY . .
