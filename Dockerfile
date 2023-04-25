@@ -1,6 +1,8 @@
-FROM php:8.1-apache
+FROM php:8.2-apache
 
 WORKDIR /var/www/laravel_docker
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN echo "UTC" > /etc/timezone
 
