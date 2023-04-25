@@ -17,11 +17,11 @@ class DevelopersSeeder extends Seeder
     {
         for ($i = 0; $i < 100; $i++) {
             DB::table('developers')->insert([
-                'nome' => 'Gazin developer',
+                'nome' => 'Thiago Rodrigues',
                 'sexo' => 'O',
-                'idade' => 55,
-                'hobby' => 'Sempre fazendo o melhor para você!',
-                'datanascimento' => '12-13-1966'
+                'idade' => 31,
+                'hobby' => 'Programar e estudar',
+                'datanascimento' => '10-03-1991'
             ]);
         }
 

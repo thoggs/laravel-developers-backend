@@ -30,7 +30,7 @@ class DeveloperModel extends Model
             ->paginate(30);
     }
 
-    public function persistNewDeveloper(Request $request)
+    public function persistNewDeveloper(Request $request): void
     {
         $this->fill([
             'nome' => ucwords(strtolower($request->input('nome'))),
@@ -42,7 +42,7 @@ class DeveloperModel extends Model
         $this->save();
     }
 
-    public function updateDeveloper(Request $request, int $id)
+    public function updateDeveloper(Request $request, int $id): void
     {
         $this::all()->find($id)->update([
             'nome' => ucwords(strtolower($request->input('nome'))),
@@ -53,7 +53,7 @@ class DeveloperModel extends Model
         ]);
     }
 
-    public function deleteDeveloperById(int $id)
+    public function deleteDeveloperById(int $id): void
     {
         $this::all()->find($id)->delete();
     }

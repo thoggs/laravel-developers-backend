@@ -25,7 +25,7 @@ git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential
 2) Agora precisamos rodar as Migrations e o Seeder para pupular o banco de dados PostgreSQL:
 
 ```sh
-docker exec apache-laravel chmod -R 777 storage && docker exec apache-laravel php artisan migrate && docker exec apache-laravel php artisan db:seed --class=DevelopersSeeder
+docker exec web chmod -R 777 storage && docker exec web php artisan migrate && docker exec web php artisan db:seed --class=DevelopersSeeder
 ```
 
 ### Concluído:

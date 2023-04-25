@@ -1,6 +1,8 @@
-FROM php:8.0-apache
+FROM php:8.2-apache
 
 WORKDIR /var/www/laravel_docker
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN echo "UTC" > /etc/timezone
 
@@ -33,5 +35,6 @@ RUN a2enmod rewrite
 
 # Configure Laravel logs
 RUN ln -sf /dev/stdout /var/www/laravel_docker/storage/laravel.log
+RUN chmod -R 777 /var/www
 
 COPY . .
