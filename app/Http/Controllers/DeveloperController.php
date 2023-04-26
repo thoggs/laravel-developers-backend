@@ -19,29 +19,21 @@ class DeveloperController extends Controller
     public function index(Request $request): JsonResponse
     {
         $developers = new DeveloperModel();
-
-        if ($request->input('page')) {
-            return response()->json([
-                'code' => 200,
-                'message' => (array()),
-                'body' => $developers->getAllDevelopersPaged()
-            ]);
-        }
+        $perPage = '50';
+        $currentPage = $request->input('page', 1);
+        $query = $developers->query();
 
         if ($request->all()) {
-            return response()->json([
-                'code' => 200,
-                'message' => (array()),
-                'body' => $developers->searchByTerms($request)
-            ]);
-        } else {
-            return response()->json([
-                'code' => 200,
-                'message' => (array()),
-                'body' => $developers->getAllDevelopers()
-            ]);
+            $query = $developers->searchByTerms($request);
         }
 
+        $paginatedData = $query->paginate($perPage, ['*'], 'page', $currentPage);
+
+        return response()->json([
+            'code' => 200,
+            'message' => (array()),
+            $paginatedData->toArray()
+        ]);
     }
 
     /**
@@ -64,7 +56,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'body' => (array())
+                'data' => (array())
             ], 400);
         } else {
             $developers = new DeveloperModel();
@@ -72,7 +64,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 201,
                 'message' => (array()),
-                'body' => (array())
+                'data' => (array())
             ], 201);
         }
     }
@@ -90,7 +82,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 200,
                 'message' => (array()),
-                'body' => (array($developers->getDeveloperById($id)))
+                'data' => (array($developers->getDeveloperById($id)))
             ]);
         } else {
             return response()->json([
@@ -98,7 +90,7 @@ class DeveloperController extends Controller
                 'message' => [
                     'errors' => 'Developer not found in database'
                 ],
-                'body' => (array())
+                'data' => (array())
             ], 404);
         }
     }
@@ -124,7 +116,7 @@ class DeveloperController extends Controller
             return response()->json([
                 'code' => 400,
                 'message' => $requestValidator->errors()->toArray(),
-                'body' => (array())
+                'data' => (array())
             ], 400);
 
         } else {
@@ -134,13 +126,13 @@ class DeveloperController extends Controller
                 return response()->json([
                     'code' => 200,
                     'message' => (array()),
-                    'body' => (array())
+                    'data' => (array())
                 ]);
             } else {
                 return response()->json([
                     'code' => 400,
                     'message' => 'ID não encontrado no banco de dados',
-                    'body' => (array())
+                    'data' => (array())
                 ], 400);
             }
         }
@@ -166,7 +158,7 @@ class DeveloperController extends Controller
                 'message' => [
                     'errors' => 'ID not found in database'
                 ],
-                'body' => (array())
+                'data' => (array())
             ], 400);
         }
 

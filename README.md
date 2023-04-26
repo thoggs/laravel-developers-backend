@@ -19,7 +19,7 @@
 1) Rode o comando em um terminal Linux/macOS ou Prompt de comando do Windows:
 
 ```sh
-git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential-crud-backend && docker-compose up -d --build
+git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential-crud-backend && docker-compose up -d
 ```
 
 ### Concluído:
