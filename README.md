@@ -9,7 +9,7 @@
 
 ## Começando
 
-Visite https://developers.codesumn.com/api/developers para ter um preview do codigo funcionando
+Visite https://developers.codesumn.com/api/developers para ter um preview do codigo funcionando.
 
 ### Requisitos:
 
