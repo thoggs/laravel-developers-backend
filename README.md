@@ -10,9 +10,7 @@
 ### Requisitos:
 
 - [x] Ter o [Docker](https://www.docker.com/) instalado.
-- [x] Ter o Docker Compose v2.2 instalado
 - [x] Ter o GIT instalado.
-- [x] Conexão com a internet.
 
 ### Clonando e subindo um container Docker do Laravel com Apache2 na porta 8080:
 
