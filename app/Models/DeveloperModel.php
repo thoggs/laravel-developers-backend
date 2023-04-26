@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class DeveloperModel extends Model
 {
@@ -19,16 +20,24 @@ class DeveloperModel extends Model
 
     public function searchByTerms(Request $request): Paginator
     {
-        return DB::table($this->table)
-            ->where('nome', 'ilike', '%' . $request->input('nome') . '%')
-            ->where('sexo', 'ilike', '%' . $request->input('sexo') . '%')
-            ->where('idade', 'ilike', '%' . $request->input('idade') . '%')
-            ->where('hobby', 'ilike', '%' . $request->input('hobby') . '%')
-            ->where('datanascimento', 'ilike', '%' . $request->input('datanascimento') . '%')
-            ->select('id', 'nome', 'sexo', 'idade', 'hobby', 'datanascimento')
+        $query = DB::table($this->table);
+        $columns = Schema::getColumnListing($this->table);
+
+        $searchTerm = $request->input('searchTerm');
+
+        if (!empty($searchTerm)) {
+            $query->where(function ($query) use ($columns, $searchTerm) {
+                foreach ($columns as $column) {
+                    $query->orWhere($column, 'ilike', '%' . $searchTerm . '%');
+                }
+            });
+        }
+
+        return $query->select('id', 'nome', 'sexo', 'idade', 'hobby', 'datanascimento')
             ->orderBy('nome')
-            ->paginate($request->input('perpage', 50));
+            ->paginate($request->input('perPage', 50));
     }
+
 
     public function persistNewDeveloper(Request $request): void
     {
