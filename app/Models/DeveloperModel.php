@@ -27,7 +27,7 @@ class DeveloperModel extends Model
             ->where('datanascimento', 'ilike', '%' . $request->input('datanascimento') . '%')
             ->select('id', 'nome', 'sexo', 'idade', 'hobby', 'datanascimento')
             ->orderBy('nome')
-            ->paginate($request->input('perPage', 50));
+            ->paginate($request->input('perpage', 50));
     }
 
     public function persistNewDeveloper(Request $request): void
