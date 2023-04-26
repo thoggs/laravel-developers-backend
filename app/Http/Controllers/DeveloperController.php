@@ -20,14 +20,6 @@ class DeveloperController extends Controller
     {
         $developers = new DeveloperModel();
 
-        if ($request->input('page')) {
-            return response()->json([
-                'code' => 200,
-                'message' => (array()),
-                $developers->searchByTerms($request)
-            ]);
-        }
-
         return response()->json([
             'code' => 200,
             'message' => (array()),
