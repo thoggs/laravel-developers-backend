@@ -14,7 +14,7 @@ Visite https://developers.codesumn.com/api/developers para ter um preview do cod
  - **GET /api/developers**: retorna uma lista paginada de todos os desenvolvedores registrados. É possível personalizar a página e a quantidade de resultados exibidos na lista adicionando os seguintes parâmetros à URL:
     - **page**: número da página a ser exibida. Exemplo: https://developers.codesumn.com/api/developers?page=2 exibe a segunda página de resultados.
     
-    - **perpage**: quantidade de resultados exibidos por página. Exemplo: https://developers.codesumn.com/api/developers?perPage=5&page=3 exibe a terceira página com
+    - **perpage**: quantidade de resultados exibidos por página. Exemplo: https://developers.codesumn.com/api/developers?perpage=5&page=3 exibe a terceira página com
     até 5 desenvolvedores por página.
 
 - **GET /api/developers/{id}**: retorna informações detalhadas sobre um desenvolvedor específico. Não suporta paginação.
