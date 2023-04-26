@@ -22,12 +22,6 @@
 git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential-crud-backend && docker-compose up -d --build
 ```
 
-2) Agora precisamos rodar as Migrations e o Seeder para pupular o banco de dados PostgreSQL:
-
-```sh
-docker exec web chmod -R 777 storage && docker exec web php artisan migrate && docker exec web php artisan db:seed --class=DevelopersSeeder
-```
-
 ### Concluído:
 
 > Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreSQL que está respondendo na porta `5432`
