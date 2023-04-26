@@ -27,7 +27,7 @@ class DeveloperModel extends Model
             ->where('datanascimento', 'ilike', '%' . $request->input('datanascimento') . '%')
             ->select('id', 'nome', 'sexo', 'idade', 'hobby', 'datanascimento')
             ->orderBy('nome')
-            ->paginate(30);
+            ->paginate(50);
     }
 
     public function persistNewDeveloper(Request $request): void
@@ -61,17 +61,5 @@ class DeveloperModel extends Model
     public function getDeveloperById(int $id): Model|Collection|array|null
     {
         return $this::all()->find($id);
-    }
-
-    public function getAllDevelopers(): array
-    {
-        return $this::all()->sortBy(['nome'])->toArray();
-    }
-
-    public function getAllDevelopersPaged(): Paginator
-    {
-        return DB::table($this->table)
-            ->orderBy('nome')
-            ->paginate(30);
     }
 }

@@ -19,20 +19,19 @@ class DeveloperController extends Controller
     public function index(Request $request): JsonResponse
     {
         $developers = new DeveloperModel();
-        $perPage = '50';
-        $currentPage = $request->input('page', 1);
-        $query = $developers->query();
 
-        if ($request->all()) {
-            $query = $developers->searchByTerms($request);
+        if ($request->input('page')) {
+            return response()->json([
+                'code' => 200,
+                'message' => (array()),
+                $developers->searchByTerms($request)
+            ]);
         }
-
-        $paginatedData = $query->paginate($perPage, ['*'], 'page', $currentPage);
 
         return response()->json([
             'code' => 200,
             'message' => (array()),
-            $paginatedData->toArray()
+            $developers->searchByTerms($request)
         ]);
     }
 

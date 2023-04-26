@@ -44,6 +44,7 @@ RUN a2enmod rewrite
 # Configure Laravel logs
 RUN touch /var/www/html/storage/logs/laravel.log
 RUN ln -sf /dev/stdout storage/logs/laravel.log
+RUN chmod -R 777 /var/www
 
 # Copy entrypoint script and make it executable
 COPY .docker/scripts/entrypoint.sh /usr/local/bin/
