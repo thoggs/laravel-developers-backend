@@ -22,7 +22,7 @@ git clone https://github.com/thoggs/pontential-crud-backend.git && cd pontential
 
 ### Concluído:
 
-> Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreSQL que está respondendo na porta `5432`
+Agora temos o Laravel rodando em http://localhost:8080/api/developers e apontando para o container PostgreSQL que está respondendo na porta `5432`
 
 ### License
 
