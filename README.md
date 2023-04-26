@@ -11,6 +11,22 @@
 
 Visite https://developers.codesumn.com/api/developers para ter um preview do codigo funcionando.
 
+ - **GET /api/developers**: retorna uma lista paginada de todos os desenvolvedores registrados. É possível personalizar a página e a quantidade de resultados exibidos na lista adicionando os seguintes parâmetros à URL:
+    - **page**: número da página a ser exibida. Exemplo: https://developers.codesumn.com/api/developers?page=2 exibe a segunda página de resultados.
+    
+    - **perPage**: quantidade de resultados exibidos por página. Exemplo: https://developers.codesumn.com/api/developers?perPage=5&page=3 exibe a terceira página com
+    até 5 desenvolvedores por página.
+
+- **GET /api/developers/{id}**: retorna informações detalhadas sobre um desenvolvedor específico. Não suporta paginação.
+
+- **POST /api/developers**: cria um novo registro de desenvolvedor. Não suporta paginação.
+
+- **PUT /api/developers/{id}**: atualiza as informações de um desenvolvedor existente. Não suporta paginação.
+
+- **DELETE /api/developers/{id}**: exclui um registro de desenvolvedor existente. Não suporta paginação.
+
+## Subindo localmente
+
 ### Requisitos:
 
 - [x] Ter o [Docker](https://www.docker.com/) instalado.
