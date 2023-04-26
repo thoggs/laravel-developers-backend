@@ -7,6 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Começando
+
+Visite https://developers.codesumn.com/api/developers para ter um preview do codigo funcionando
+
 ### Requisitos:
 
 - [x] Ter o [Docker](https://www.docker.com/) instalado.
